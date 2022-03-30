@@ -1,0 +1,178 @@
+#!/usr/bin/python3
+#Bismillah <3 
+import sys
+import os
+from os import path
+import time
+import socket
+import urllib.request, urllib.parse, urllib.error
+import atexit
+import requests
+from pathlib import Path
+#req
+import base64
+from sys import argv
+from sys import platform
+from platform import system
+from urllib.parse import urlparse
+from time import sleep
+from datetime import datetime
+from lockdoors import shrts
+###Variables
+yes = set(['yes', 'y', 'ye', 'Y'])
+no = set(['no', 'n', 'nop', 'N'])
+cwd = os.getcwd()
+Version = "2.3"
+verbose = yes
+config = str(Path.home()) + "/.config/lockdoor/"
+#Print Logo
+def printlogo():
+    print("""
+\033[94m            ..',,,'..            \033[0m
+\033[94m         .',;;;;;;;;,'.          \033[0m
+\033[94m      ..,;;;;;;;;;;;;;;,..       \033[0m
+\033[94m     .,;;;,'..'''''.',;;;,.      \033[0m
+\033[94m     .;;;;.  ..   .. .;;;;'      \033[0m\033[91m (                                         \033[0m
+\033[94m     .,;;;.  ...     .;;;;.      \033[0m\033[91m )\ )               )  (                   \033[0m
+\033[94m      ..,;,.  ...   .,;,..       \033[0m\033[91m (()/(            ( /(  )\ )           (   \033[0m
+\033[94m        .';;'.    .',;'.         \033[0m\033[91m /(_))  (    (   )\())(()/(  (    (   )(   \033[0m
+\033[94m    ..',,;;;;;,,,,;;;;;,,'..     \033[0m\033[91m (_))    )\   )\ ((_)\  ((_)) )\   )\ (()\ \033[0m
+\033[94m  .','.....................''.   \033[0m\033[91m | |    ((_) ((_)| |(_) _| | ((_) ((_) ((_)\033[0m
+\033[94m .',..',,,,,,,,,,,,,,,,,,,..,,.  \033[0m\033[91m | |__ / _ \/ _| | / // _` |/ _ \/ _ \| '_|\033[0m
+\033[94m .;,..,;;;;;;'....';;;;;;;..,;.  \033[0m\033[91m |____|\___/\__| |_\_\\__,_|\___/\___/|_|  \033[0m
+\033[94m ';;..,;;;;;,..,,..';;;;;,..,;'  \033[0m\033[92m           © Sofiane Hamlaoui | 2021       \033[0m
+\033[94m.';;..,;;;;,. .... .,;;;;,..;;,. \033[0m\033[92m Lockdoor : A Penetration Testing framework\033[0m
+\033[94m ';;..,;;;;'  ....  .;;;;,..;;,. \033[0m\033[92m                    v2.3                   \033[0m
+\033[94m .,;'.';;;;'.  ..  .';;;;,.';,.  \033[0m
+\033[94m   ....;;;;;,'''''',;;;;;'...    \033[0m
+\033[94m       ..................        \033[0m
+""")
+def getinstalldir():
+    f = open(config + 'lockdoor.conf')
+    contents = f.read().rstrip('\n')
+    f.close()
+    getinstalldir.installdirc = contents.replace('Location:', '')
+def checkroot():
+    shrts.prilogspc()
+    #Linux
+    if platform == "linux" or platform == "linux2":
+        if os.geteuid() != 0:
+            print("              \033[1;33;40m-[!]- This Tool Must Run As ROOT -[!]-\033[0m")
+            sys.exit()
+        else:
+            print("                        \033[1;33;40m-[!]- Running As ROOT -[!]-\033[0m")
+    #Cygwin
+    elif platform == "cygwin":
+        print("                        \033[1;33;40m-[!]- Running As ROOT -[!]-\033[0m")
+def confirmlocation():
+    getinstalldir()
+    confirm = input("\033[91m[!]\033[0m    \033[94mThe Installation directory is : " + "\033[92m" + getinstalldir.installdirc + "\033[90m" + "\033[94m" + " Confirm ? (Y/N) : \033[91m")
+    if not confirm in no:
+        shrts.spc()
+        print("          \033[94m Installation directory confirmed \033[0m" + "\033[92m" + getinstalldir.installdirc + "\033[90m")
+        shrts.spc()
+        shrts.oktocont()
+        shrts.clr()
+    else:
+        shrts.spc()
+        print("             remove all files on \033[94m'/usr/local/bin\033[90m \033[92m(grep -l Sofiane /usr/local/bin/* | xargs sudo rm)\033[90m")
+        shrts.spc()
+        print("             Change the installation directory from the configuration file \033[90m(\033[92m" + config + "lockdoor.conf \033[90m)")
+        confirmlocation()
+def checkconnect():
+    shrts.spc()
+    url='http://www.google.com/'
+    try:
+        _ = requests.get(url, timeout=1)
+        return True
+    except requests.ConnectionError:
+        print("          \033[1;33;40m-[!]- YOU NEED INTERNET CONNECTION TO RUN LOCKDOOR -[!]-\033[0m")
+        sys.exit()
+    return
+def vercheck():
+    with urllib.request.urlopen('https://raw.githubusercontent.com/SofianeHamlaoui/Lockdoor-Framework/master/VERSION') as response:
+        resp = str(response.read())
+        if Version in resp:
+           print("                  \033[92m[!]\033[0m \033[94m LOCKDOOR IS UP TO DATE \033[0m \033[92m[!]\033[0m")
+        else:
+            ans = input("           \033[91m[!]\033[0m   \033[94mLOCKDOOR ISN'T UP TO DATE ! UPDATE IT ? (Y/N) : \033[0m")
+            shrts.spc()
+            if not ans in yes:
+                print("                 \033[91m[!]\033[0m   \033[94mLOCKDOOR IS OUTDATED \033[0m")
+            else:
+                from lockdoors import update
+                update.lockdoor()
+def updatingtools():
+    shrts.spc()
+    printlogo()
+    confirm = input("\033[91m[!]\033[0m    \033[94mDo you want to update the installed tools  ?: " + "\033[94m(Y/N) : \033[91m")
+    if not confirm in no:
+        print("\033[92mUpdating The Tools...\033[90m")
+        shrts.spc()
+        getinstalldir()
+        os.system('sudo find ' + getinstalldir.installdirc + ' -type d -name .git -exec sh -c "cd \"{}\"/../ && pwd && git pull origin master" \;')
+        shrts.spc()
+        shrts.oktocont()
+        shrts.clr()
+
+def checkconf():
+    if os.path.isfile('/root/.config/lockdoor/lockdoor.conf') == False:
+        shrts.spc()
+        print("\033[91m                     Lockdoor Config not file found!\033[0m")
+        shrts.spc()
+        confirm = input("\033[91m[!]\033[0m    \033[94mDo you want to run the installation script  ?: " + "\033[94m(Y/N) : \033[91m")
+        if not confirm in no:
+            shrts.spc()
+            print("\033[92mInstalling Lockdoor with requirments...\033[90m")
+            shrts.spc()
+            os.system("curl -L https://lockdoor-framework.github.io/rinstall > install.sh && chmod +x install.sh && ./install.sh")
+            shrts.spc()
+            shrts.oktocont()
+            shrts.clr()
+        else:
+            shrts.spc()
+            print("NO? so you have to download lockdoor from Github and run the install script [\033[94mhttps://git.io/JeDay\033[91m]")
+            sys.exit()
+    else:
+        shrts.spc()
+        print("\033[92m                  -[!]- Lockdoor Config file found!-[!]- \033[91m")
+
+# incase brk ak chayef :v 
+if (" ".join(sys.argv[1:]) == "--version") or (" ".join(sys.argv[1:]) == "-v"):
+    with urllib.request.urlopen('https://raw.githubusercontent.com/SofianeHamlaoui/Lockdoor-Framework/master/VERSION') as response:
+        resp = str(response.read().decode('utf-8'))
+        shrts.prilogspc()
+        print("\033[94m                        This version of Lockdoor is v" + resp +"\033[91m")
+        sys.exit()
+#INIT
+def init():
+    checkroot()
+    checkconf()
+    checkconnect()
+    confirmlocation()
+    updatingtools()
+    shrts.spc()
+    printlogo()
+    vercheck()
+    shrts.spc()
+if __name__ == "__main__":
+    try:    
+            init()
+            from lockdoors import main
+            main.menu()
+    except (KeyboardInterrupt):
+        shrts.spc()
+        shrts.spc()
+        ans = input("           \033[91m-[!]- SIGINT or CTRL-C detected. Are You sure to exit \033[92mLockdoor \033[90m\033[91m-[!] ? (Y/N)\033[0m : ")
+        if not ans in yes:
+            from lockdoors import main
+            main.menu()
+        else:
+            shrts.clr()
+            printlogo()
+            now = datetime.now()
+            dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+            print("                 \033[91m-[!]- LOCKDOOR IS EXITING -[!]-\033[0m")
+            shrts.spc()
+            print("                 \033[91m-[!]- EXITING AT " + dt_string + " -[!]-\033[0m")
+            sys.exit()
