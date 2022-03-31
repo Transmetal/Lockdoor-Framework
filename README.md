@@ -1,55 +1,3 @@
-
-<p align="center">
-  <img src="https://sofianehamlaoui.github.io/junk/lockdoor/2.3/lockdoor_small.png">
-</p>
-
-<h2 align="center"> Lockdoor v2.3</h2>
-
-# Table of contents
-
-- [Table of contents](#table-of-contents)
-- [Changelog 📌  :](#changelog---)
-- [Badges 📌 :](#badges--)
-- [Support me 💰 :](#support-me--)
-- [Contributors ⭐ :](#contributors--)
-- [Versions](#versions)
-    - [06/2021 : 2.3](#062021--23)
-    - [03/2020 : 2.2.3](#032020--223)
-- [Blogs & Articles 📰 :](#blogs--articles--)
-- [Overview 📙 :](#overview--)
-- [Features 📙 :](#features--)
-  - [Pentesting Tools Selection 📙 :](#pentesting-tools-selection--)
-  - [Resources and cheatsheets 📙 :](#resources-and-cheatsheets--)
-- [Screenshots 💻 :](#screenshots--)
-- [Demos 💻 :](#demos--)
-- [Installation 🛠️ :](#installation-%EF%B8%8F-)
-- [Lockdoor Tools contents 🛠️ :](#lockdoor-tools-contents-%EF%B8%8F-)
-  - [**Information Gathering** :mag_right: :](#information-gathering-mag_right-)
-  - [**Web Hacking** 🌐 :](#web-hacking--)
-  - [**Privilege Escalation** ⚠️ :](#privilege-escalation-%EF%B8%8F-)
-  - [**Reverse Engineering** ⚡:](#reverse-engineering-)
-  - [**Exploitation** ❗:](#exploitation-)
-  - [**Shells** 🐚:](#shells-)
-  - [**Password Attacks** ✳️:](#password-attacks-%EF%B8%8F)
-  - [**Encryption - Decryption** 🛡️:](#encryption---decryption-%EF%B8%8F)
-  - [**Social Engineering** 🎭:](#social-engineering-)
-- [Lockdoor Resources contents 📚 :](#lockdoor-resources-contents--)
-  - [**Information Gathering** :mag_right: :](#information-gathering-mag_right-)
-  - [**Crypto** 🛡️:](#crypto-%EF%B8%8F)
-  - [**Exploitation** ❗:](#exploitation-)
-  - [**Networking** 🖧 :](#networking--)
-  - [**Password Attacks** ✳️:](#password-attacks-%EF%B8%8F-1)
-  - [**Post Exploitation** ❗❗:](#post-exploitation-)
-  - [**Privilege Escalation** ⚠️:](#privilege-escalation-%EF%B8%8F)
-  - [**Pentesting & Security Assessment Findings Report Templates** 📝 :](#pentesting--security-assessment-findings-report-templates--)
-  - [**Reverse Engineering** ⚡ :](#reverse-engineering--)
-  - [**Social Engineering** 🎭:](#social-engineering-)
-  - [**Walk Throughs** 🚶 :](#walk-throughs--)
-  - [**Web Hacking** 🌐 :](#web-hacking--)
-  - [**Other** 📚 :](#other--)
-- [**Contributing** :](#contributing-)
-
-
 # Changelog 📌  :
   #### Version v2.3 IS OUT !! 
 
@@ -60,23 +8,6 @@
         - new docker iaage build
 
         - adding packages for each supported distros
-
-# Badges 📌 :
-![made-with-python]( http://ForTheBadge.com/images/badges/made-with-python.svg)
-![Twitter](https://badgen.net/twitter/follow/S0fianeHamlaoui)
-![GitHub](https://badgen.net/github/release/SofianeHamlaoui/Lockdoor-Framework)
-![License](https://badgen.net/pypi/license/lockdoor)
-![TestedON](https://img.shields.io/badge/Tested%20on%20%20-Linux%20%26%20Windows-blue)
-
-
-# Support me 💰 :
-
-   - On Paypal : https://www.paypal.me/SofianeHamlaoui
-   - BTC Addresse : 1NR2oqsuevvWJwzCyhBXmqEA5eYAaSoJFk
-
-# Contributors ⭐ :
-
-![commits](https://badges.pufler.dev/contributors/SofianeHamlaoui/Lockdoor-Framework)
 
 # Versions 
 
@@ -117,39 +48,6 @@
    - All you need as Privilege Escalation scripts and exploits
    - Working on Kali,Ubuntu,Arch,Fedora,Opensuse and Windows (Cygwin)
 
-#### Youtube Video : [Link](https://www.youtube.com/watch?v=_agvb29FQrs)
-![Youtube](https://img.youtube.com/vi/_agvb29FQrs/maxresdefault.jpg)
-
-
-# Blogs & Articles 📰 :
-
-      * Reddit : https://www.reddit.com/r/cybersecurity/comments/d4hthh/lockdoor_a_penetration_testing_framework_with/
-      * Medium.com : https://medium.com/@SofianeHamlaoui/lockdoor-framework-a-penetration-testing-framework-with-cyber-security-resources-sofiane-22fbb7942378
-      * Xploit Lab : https://xploitlab.com/lockdoor-framework-penetration-testing-framework-with-cyber-security-resources/
-      * Station X : https://www.stationx.net/threat-intelligence-17th-september/
-      * Kelvin Security : https://blog.kelvinsecurity.com/2019/09/12/lookdoor-framework-a-penetration-testing-framework-with-cyber-security-resources/
-      * All About hacking : https://www.allabouthack.com/2019/09/lookdoor-framework-penetration-testing.html
-      * Wired Intel : http://wiredintel.bravehost.com/wired/2019/09/15/%F0%9F%94%90-lockdoor-a-penetration-testing-framework-with-cyber-security-resources
-
-            * Social networks :
-                  * LinkedIn :
-                        * By Nermin S. : https://www.linkedin.com/posts/nsmajic_sofianehamlaouilockdoor-framework-activity-6578952540564529152-B-0P
-                  * Twitter :
-                        * By Me :D : https://twitter.com/S0fianeHamlaoui/status/1173079963567820801
-                        * National Cyber Security Services : https://twitter.com/NationalCyberS1/status/1173917454151475202
-                        * Xploit Lab : https://twitter.com/xploit_lab/status/1173990273644261376
-                        * More : https://twitter.com/search?q=Lockdoor%20Framework
-                        * More : https://twitter.com/search?q=Lookdoor%20Framework
-                  * Facebook :
-                        * By ME :D : https://www.facebook.com/S0fianeHamlaoui/posts/678704759315090
-                        * National Cyber Security Services : https://www.facebook.com/ncybersec/posts/1273735519463836
-                        * Xploit Lab : https://www.facebook.com/XploitLab/posts/2098443780463126
-                        * Root Developers : https://www.facebook.com/root.deve/posts/1181412315364265
-                        * More : https://www.facebook.com/search/top/?q=Lockdoor%20Framework
-            * Youtube :
-                  * My youtube video : https://www.youtube.com/watch?v=_agvb29FQrs
-                  * The Shadow Brokers video : https://www.youtube.com/watch?v=6njKRrKQtow
-
 # Overview 📙 :
 
 *LockDoor* is a Framework aimed at **helping penetration testers, bug bounty hunters And cyber security engineers**.
@@ -179,24 +77,10 @@ easily.
 
    - **Cheatsheets**: Everyone can forget something on processing or a tool use, or even some tricks. Here comes the Cheatsheets role ! there are cheatsheets about everything, every tool on the framework and any enumeration,exploitation and post-exploitation techniques.
 
-
-# Screenshots 💻 :
-
-| ![](https://sofianehamlaoui.github.io/junk/lockdoor/screenshots/installation-dir-1.png) | ![](https://sofianehamlaoui.github.io/junk/lockdoor/screenshots/verbosemode.png) | ![](https://sofianehamlaoui.github.io/junk/lockdoor/screenshots/RootMenu.png) | ![](https://sofianehamlaoui.github.io/junk/lockdoor/screenshots/infogath.png) | ![](https://sofianehamlaoui.github.io/junk/lockdoor/screenshots/webhack.png) | ![](https://sofianehamlaoui.github.io/junk/lockdoor/screenshots/exploitation.png) | ![](https://sofianehamlaoui.github.io/junk/lockdoor/screenshots/about.png) |
-|-----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------------------------------------|------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------|
-
-# Demos 💻 :
-
-| ![](https://sofianehamlaoui.github.io/junk/lockdoor/gifs/kali.gif) | ![](https://sofianehamlaoui.github.io/junk/lockdoor/gifs/ubuntu.gif) | ![](https://sofianehamlaoui.github.io/junk/lockdoor/gifs/archlinux.gif) | ![](https://sofianehamlaoui.github.io/junk/lockdoor/gifs/fedora.gif) | ![](https://sofianehamlaoui.github.io/junk/lockdoor/gifs/opensuse.gif) | ![](https://sofianehamlaoui.github.io/junk/lockdoor/gifs/windows.gif) |
-|-|-|-|-|-|-|
-
 # Installation 🛠️ :
 
 > **The recommended way to use Lockdoor is by pulling the Docker Image so you will not have
 to worry about dependencies issues.**
-
-> - **A Docker image is available on Docker Hub and automatically re-built at each update:
-https://hub.docker.com/r/sofianehamlaoui/lockdoor. It is initially based on the official debian docker image (debian).**
 
 - Docker Installation
 
@@ -236,9 +120,8 @@ https://hub.docker.com/r/sofianehamlaoui/lockdoor. It is initially based on the 
 
      >  **Installing it using the script may take some time depends on the packages already installed on your system.**
             > here you can find a fresh installation on a new debian distro with no pre-installed packages : [11min]
-               ![](https://i.imgur.com/2yvXOYm.png)
     ```bash
-    git clone https://github.com/SofianeHamlaoui/Lockdoor-Framework.git && cd Lockdoor-Framework && chmod +x ./install.sh && ./install.sh 
+    git clone https://github.com/Transmetal/Lockdoor-Framework && cd Lockdoor-Framework && chmod +x ./install.sh && ./install.sh 
     ```   
 
 
@@ -491,12 +374,3 @@ https://hub.docker.com/r/sofianehamlaoui/lockdoor. It is initially based on the 
 > -   [Images (I'll let you discover that)](ToolsResources/IMAGES/)
 > -   [Google Hacking DataBase](ToolsResources/GHDB.pdf)
 > -   [Google Fu](ToolsResources/GoogleFu.pdf)
-
-# **Contributing** :
-
-   0. Read [Contributing](https://github.com/SofianeHamlaoui/Lockdoor-Framework/blob/master/docs/CONTRIBUTING.md), [The Code of Conduct](https://github.com/SofianeHamlaoui/Lockdoor-Framework/blob/master/docs/CODE_OF_CONDUCT.md) and [The pull request template](https://github.com/SofianeHamlaoui/Lockdoor-Framework/blob/master/docs/pull_request_template.md)
-   1. Fork it (https://github.com/SofianeHamlaoui/Lockdoor-Framework/fork)
-   2. Create your feature branch
-   3. Commit your changes
-   4. Push to the branch
-   5. Create a new Pull Request
